@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include<string>
 #include <random> 
@@ -7,7 +8,15 @@ private:
 	double Balance = 0;
 	int CardID;
 	static int CardCount;
-	static int GetRandomNumber() {
+	
+
+public:
+	SmartCard()
+	{
+		CardID = GetRandomNumber();
+		CardCount++;
+	}
+	 int GetRandomNumber() {
 		random_device rd;
 		mt19937 gen(rd());
 
@@ -18,13 +27,7 @@ private:
 
 		return random_number;
 	}
-
-public:
-	SmartCard()
-	{
-		CardID = GetRandomNumber();
-		CardCount++;
-	}
+	
 
 	void Recharge(double _balance) {
 		if (_balance < 0)

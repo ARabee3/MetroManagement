@@ -28,7 +28,10 @@ public:
 	string GetName() {
 		return this->Name;
 	}
-
+	
+	SmartCard* GetCard() {
+		return card;
+	}
 	void SetNationalID(string _id) {
 		if (_id.length() < 6)
 			throw invalid_argument("Name must be greater than 6 characters");
@@ -39,8 +42,9 @@ public:
 	}
 
 	void SetEmail(string _email) {
-		if (_email.find('@') != std::string::npos) {
+		if (_email.find('@') != string::npos) {
 			this->Email = _email;
+			return;
 		}
 		return throw invalid_argument("Invalid Email");
 	}

@@ -123,12 +123,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="FareCalculator.h" />
     <ClCompile Include="MetroManagement.cpp" />
     <ClCompile Include="SmartCard.h" />
+    <ClCompile Include="Trip.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Brakes.h" />
+    <ClInclude Include="DerivedTicket.h" />
+    <ClInclude Include="Engine.h" />
+    <ClInclude Include="MaintenanceLog.h" />
+    <ClInclude Include="MaintenanceRecord.h" />
     <ClInclude Include="Passenger.h" />
+    <ClInclude Include="Reports.h" />
+    <ClInclude Include="Route.h" />
+    <ClInclude Include="Station.h" />
     <ClInclude Include="Subscription.h" />
+    <ClInclude Include="Ticket.h" />
+    <ClInclude Include="Train.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
