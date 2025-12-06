@@ -6,7 +6,7 @@ A comprehensive C++ simulation of a modern Metro Rail Network. This project demo
 
 ## 📋 Features
 
-### 🚄 Train & Infrastructure Management
+### 🚄 Train And Infrastructure Management
 *   **Train Lifecycle**: Start, stop, emergency braking, and travel simulation.
 *   **Component Composition**: Trains are composed of complex `Engine` and `Brake` systems (Hydraulic, Regenerative, etc.).
 *   **Maintenance Logging**: detailed logs for repairs, tracking costs, parts, and technicians.
