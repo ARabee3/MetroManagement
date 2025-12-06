@@ -22,21 +22,13 @@
 
 using namespace std;
 
-// ==========================================
-// STATIC INITIALIZATION
-// ==========================================
-// Required because SmartCard has a static member
+
 int SmartCard::CardCount = 0;
 
-// ==========================================
-// HELPER CLASS
-// ==========================================
-// We create this because the base Passenger class has a protected 'card'
-// but no public Setter method to assign one.
+
 class TestPassenger : public Passenger {
 public:
     TestPassenger(string n, string id, string email) : Passenger(n, id, email) {
-        // Initialize card to nullptr to avoid crashes if accessed before assignment
         this->card = nullptr;
     }
 
@@ -46,18 +38,15 @@ public:
     }
 };
 
-// ==========================================
-// MAIN FUNCTION
-// ==========================================
+
 int main() {
     cout << "*************************************************" << endl;
     cout << "*      METRO MANAGEMENT SYSTEM INTEGRATION      *" << endl;
     cout << "*************************************************" << endl << endl;
 
     try {
-        // ---------------------------------------------------------
+        
         // 1. INFRASTRUCTURE SETUP (Stations & Route)
-        // ---------------------------------------------------------
         cout << "--- STEP 1: Setting up Route ---" << endl;
         Station* s1 = new Station("Central Station", "Downtown - Zone A");
         Station* s2 = new Station("University Park", "Uptown - Zone B");
@@ -74,9 +63,7 @@ int main() {
         cout << "-------------------------------------------------\n" << endl;
 
 
-        // ---------------------------------------------------------
         // 2. TRAIN & MAINTENANCE OPERATIONS
-        // ---------------------------------------------------------
         cout << "--- STEP 2: Train Operations & Maintenance ---" << endl;
         // Create a train with specific engine and brakes
         Train metroTrain(
@@ -104,9 +91,8 @@ int main() {
         cout << "-------------------------------------------------\n" << endl;
 
 
-        // ---------------------------------------------------------
         // 3. PASSENGER & SMARTCARD SETUP
-        // ---------------------------------------------------------
+        
         cout << "--- STEP 3: Passenger & SmartCard ---" << endl;
 
         // Create Passenger (Using helper class to allow card assignment)
@@ -123,9 +109,8 @@ int main() {
         cout << "-------------------------------------------------\n" << endl;
 
 
-        // ---------------------------------------------------------
+        
         // 4. TICKETING & FARE CALCULATION
-        // ---------------------------------------------------------
         cout << "--- STEP 4: Ticketing Logic ---" << endl;
 
         // Create a Ticket based on Distance
@@ -146,9 +131,8 @@ int main() {
         cout << "-------------------------------------------------\n" << endl;
 
 
-        // ---------------------------------------------------------
         // 5. TRIP EXECUTION
-        // ---------------------------------------------------------
+        
         cout << "--- STEP 5: Executing the Trip ---" << endl;
 
         // Initialize Trip
@@ -162,9 +146,9 @@ int main() {
         cout << "-------------------------------------------------\n" << endl;
 
 
-        // ---------------------------------------------------------
+        
          // --- STEP 6: REAL REPORT GENERATION (NEW CODE) ---
-         // ---------------------------------------------------------
+         
         cout << "\n--- STEP 6: System Reports ---" << endl;
 
         // 1. Generate Train Health Report
